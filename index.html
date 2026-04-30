@@ -11,6 +11,7 @@
             --rhein-gold: #c6a05e;
             --medien-blau: #2c3e50;
             --hof-gruen: #27ae60;
+            --alt-rot: #c0392b;
         }
 
         body {
@@ -58,6 +59,7 @@
         .rhein-tower { --color: var(--rhein-gold); }
         .medien-hafen { --color: var(--medien-blau); }
         .hofgarten { --color: var(--hof-gruen); }
+        .altstadt { --color: var(--alt-rot); }
     </style>
 </head>
 <body>
@@ -91,8 +93,16 @@
             <div class="meta">In der Innenstadt | 24/7 geöffnet</div>
             <div class="meta">Eintritt: Kostenlos</div>
         </article>
-    </div>
+        <!-- Altstadt -->
+        <article class="card altstadt">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--alt-rot)" stroke-width="2"><path d="M3 22V9l9-7 9 7v13H3z"/><path d="M9 22V14h6v8"/><path d="M3 9l9-7 9 7"/></svg>
+            <h2>Altstadt</h2>
+            <p>Die Düsseldorfer Altstadt – liebevoll „längste Theke der Welt" genannt – ist das pulsierende Herz der Stadt. Rund 260 Kneipen, Bars und Restaurants reihen sich auf engstem Raum aneinander. Hier trifft rheinische Lebensfreude auf historische Gassen, den Burgplatz und die markante Lambertuskirche.</p>
+            <div class="meta">Burgplatz | Täglich geöffnet</div>
+            <div class="meta">Eintritt: Kostenlos</div>
+        </article>
 
+    </div>
     <script>
         document.querySelectorAll('.card').forEach(card => {
             card.addEventListener('mouseenter', () => {
