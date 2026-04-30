@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Düsseldorfs Wahrzeichen</title>
+    <style>
+        :root {
+            --bg: #f4f7f6;
+            --text: #2d3436;
+            --rhein-gold: #c6a05e;
+            --medien-blau: #2c3e50;
+            --hof-gruen: #27ae60;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 { margin-bottom: 50px; font-weight: 300; letter-spacing: 2px; }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 6px solid var(--color);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .icon { width: 60px; height: 60px; margin-bottom: 20px; }
+        h2 { margin-top: 0; }
+        p { line-height: 1.6; font-size: 0.95rem; color: #636e72; }
+        .meta { font-size: 0.85rem; font-weight: 600; margin-top: 15px; }
+
+        .rhein-tower { --color: var(--rhein-gold); }
+        .medien-hafen { --color: var(--medien-blau); }
+        .hofgarten { --color: var(--hof-gruen); }
+    </style>
+</head>
+<body>
+
+    <h1>Düsseldorfer Wahrzeichen</h1>
+
+    <div class="container">
+        <!-- Rheinturm -->
+        <article class="card rhein-tower">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--rhein-gold)" stroke-width="2"><path d="M12 2v20M8 22h8M10 2l2-2 2 2"/></svg>
+            <h2>Rheinturm</h2>
+            <p>Der Rheinturm ist mit 240,5 Metern das höchste Bauwerk der Stadt. Er dient nicht nur als Fernsehturm, sondern beherbergt auch die weltweit größte digitale Uhr. Von der Aussichtsplattform bietet sich ein spektakulärer Blick über das Rheinknie und die gesamte Metropolregion.</p>
+            <div class="meta">Stromstraße 20 | Tgl. 10–23 Uhr</div>
+            <div class="meta">Eintritt: ab 11,00 €</div>
+        </article>
+
+        <!-- MedienHafen -->
+        <article class="card medien-hafen">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--medien-blau)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <h2>MedienHafen</h2>
+            <p>Wo einst Waren umgeschlagen wurden, steht heute Architektur auf Weltniveau. Die berühmten Gehry-Bauten bilden das Herzstück des Viertels. Die Mischung aus alter Hafenindustrie und moderner, kurviger Ästhetik macht ihn zum Fotomotiv Nummer eins.</p>
+            <div class="meta">Neuer Zollhof | Frei zugänglich</div>
+            <div class="meta">Eintritt: Kostenlos</div>
+        </article>
+
+        <!-- Hofgarten -->
+        <article class="card hof-gruen">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--hof-gruen)" stroke-width="2"><path d="M12 2C8 6 4 9 4 14a8 8 0 0 0 16 0c0-5-4-8-8-12z"/></svg>
+            <h2>Hofgarten</h2>
+            <p>Als ältester öffentlicher Park Deutschlands ist der Hofgarten die grüne Lunge der Innenstadt. Er wurde 1769 im Stil eines englischen Landschaftsgartens angelegt und verbindet den Kö-Bogen mit dem Rheinufer. Er lädt zu ausgiebigen Spaziergängen ein und bietet Ruhe inmitten des urbanen Treibens.</p>
+            <div class="meta">In der Innenstadt | 24/7 geöffnet</div>
+            <div class="meta">Eintritt: Kostenlos</div>
+        </article>
+    </div>
+
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.borderColor = 'var(--color)';
+            });
+        });
+    </script>
+</body>
+</html>
